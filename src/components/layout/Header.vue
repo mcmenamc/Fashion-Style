@@ -173,12 +173,12 @@ export default {
         this.$vuetify.theme.dark = false;
       }
     }
-    // if (
-    //   window.matchMedia &&
-    //   window.matchMedia("(prefers-color-scheme: dark)").matches
-    // )
-    else {
-      this.$vuetify.theme.themes.dark = true;
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    )
+     {
+      this.$vuetify.theme.dark = true;
       localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
     }
   },
