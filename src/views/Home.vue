@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div >
     <v-row dense>
       <v-col cols="12">
         <v-carousel cycle show-arrows-on-hover>
