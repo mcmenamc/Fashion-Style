@@ -9,6 +9,7 @@
             :src="item.src"
           ></v-carousel-item>
         </v-carousel>
+
       </v-col>
     </v-row>
     <v-row justify="center" class="text-center mt-10" no-gutters>
@@ -22,24 +23,28 @@
         </h3>
       </v-col>
     </v-row>
-    <v-text-field :rules="rules"></v-text-field>
 
     <v-row class="mt-15" justify="center">
-      <v-col v-for="(item, index) in cards" :key="index" cols="12"  sm="4" md="6">
+      <v-col
+        v-for="(item, index) in cards"
+        :key="index"
+        cols="12"
+        sm="4"
+        md="3"
+      >
         <v-card to class="mx-auto" max-width="100%" outlined>
           <v-list-item three-line>
             <v-list-item-content>
               <v-list-item-title class="text-h6 mb-1 mt-3">
-				{{ item.title }}
-                </v-list-item-title
-              >
+                {{ item.title }}
+              </v-list-item-title>
               <v-list-item-subtitle>
-				{{item.subtitle}}
-			  </v-list-item-subtitle>
+                {{ item.subtitle }}
+              </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-avatar tile size="75">
               <v-img>
-                <img v-bind:src="require('@/assets/images/'+item.img)" />
+                <img v-bind:src="require('@/assets/images/' + item.img)" />
               </v-img>
             </v-list-item-avatar>
           </v-list-item>
@@ -51,7 +56,6 @@
                 {{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}
               </v-icon>
             </v-btn>
-            
           </v-card-actions>
           <v-expand-transition>
             <div v-show="show">
@@ -66,8 +70,32 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-text-field :rules="rules"></v-text-field>
+    <v-row>
+      <v-col cols="12" elevation="12">
+        <v-hover>
+          <template v-slot:default="{ hover }">
+            <v-card :elevation="hover ? 24 : 6" dark>
+              <v-img
+                :src="require('@/assets/images/fondo2.jpeg')"
+                height="230"
+                transition="fade-transition"
+                gradient="to top right, rgba(81,91,212,.28) , rgba(129,52,175,.38), rgba(129,52,175,.38), rgba(221,42,123,.54),rgba(245,133,41,.70) "
 
+              ></v-img>
+              <div class="follow" color="secondary">
+                Siguenos en nuestras redes sociales
+                <div class="redes mt-5">
+                  <v-icon color="#00ACEE" size="30px" class="mx-3">mdi-twitter</v-icon>
+                  <v-icon color="#3B5998" size="30px" class="mx-3">mdi-facebook</v-icon>
+                  <v-icon color="#0088cc" size="30px" class="mx-3 ">mdi-telegram</v-icon>
+                  <v-icon color="#c4302b " size="30px" class="mx-3">mdi-youtube</v-icon>
+                </div>
+              </div>
+            </v-card>
+          </template>
+        </v-hover>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -92,24 +120,56 @@ export default {
     show: false,
     cards: [
       {
-          title: "Descipción",
+        title: "Descipción",
         subtitle: "1,000 mil maravillas",
         img: "car.png",
-		text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
-		show: false,
-	  	href: "#",
+        text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
+        show: false,
+        href: "#",
       },
       {
         title: "Descipción",
         subtitle: "1,000 mil maravillas",
-         img: "car.png",
-		text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
-		show: false,
-	  	href: "#",
+        img: "car.png",
+        text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
+        show: false,
+        href: "#",
       },
-	  
+      {
+        title: "Descipción",
+        subtitle: "1,000 mil maravillas",
+        img: "car.png",
+        text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
+        show: false,
+        href: "#",
+      },
     ],
   }),
   components: {},
 };
 </script>
+
+<style scoped>
+.follow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  z-index: 1;
+}
+.redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <v-footer >
+  <v-footer  >
     <v-col
       class="text-center"
       cols="12"
@@ -12,9 +12,6 @@
 <script>
 export default {
     name: 'Footer',
-
-    
-
 };
 </script>
 
