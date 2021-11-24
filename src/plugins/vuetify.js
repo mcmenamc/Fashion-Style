@@ -14,17 +14,17 @@ export default new Vuetify({
     themes: {
       light: {
         primary: '#e34399',
-        secondary: '#F3E5F5 ',
+        secondary: '#FCE4EC',
         accent: '#82B1FF',
-        error: '#FFEBEE',
+        error: '#FF5252',
         info: '#1976D2',
         success: '#4CAF50',
         warning: '#FFC107',
         background: colors.indigo.lighten5,
       },
       dark: {
-        primary: '#212121',
-        secondary: '#424242',
+        primary: '#AD1457',
+        secondary: '#212121',
         accent: '#82B1FF',
         error: '#FF5252',
         info: '#64B5F6',

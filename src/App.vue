@@ -4,13 +4,13 @@
 
     <v-main >
       <v-container   >
-        <!-- <XyzTransition
+        <XyzTransition
           appear
           xyz="fade in-left-100% out-right-100%"
           mode="out-in"
-        > -->
+        >
           <router-view></router-view>
-        <!-- </XyzTransition> -->
+        !-- </XyzTransition> -->
       </v-container>
     </v-main>
     <Footer />
