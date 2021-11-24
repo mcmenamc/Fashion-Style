@@ -10,7 +10,7 @@
           mode="out-in"
         >
           <router-view></router-view>
-        !-- </XyzTransition> -->
+         </XyzTransition> 
       </v-container>
     </v-main>
     <Footer />
@@ -30,6 +30,26 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  mounted() {
+    //
+    const theme = localStorage.getItem("dark_theme");
+
+    if (theme) {
+      if (theme === "true") {
+        this.$vuetify.theme.dark = true;
+      } else {
+        this.$vuetify.theme.dark = false;
+      }
+    }
+    // if (
+    //   window.matchMedia &&
+    //   window.matchMedia("(prefers-color-scheme: dark)").matches
+    // )
+     else{
+      this.$vuetify.theme.dark = true;
+      localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
+    }
   },
 };
 </script>

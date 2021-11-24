@@ -7,8 +7,6 @@
             v-for="(item, i) in items"
             :key="i"
             :src="item.src"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
           ></v-carousel-item>
         </v-carousel>
       </v-col>
@@ -24,6 +22,7 @@
         </h3>
       </v-col>
     </v-row>
+    <v-text-field :rules="rules"></v-text-field>
 
     <v-row class="mt-15" justify="center">
       <v-col v-for="(item, index) in cards" :key="index" cols="12"  sm="4" md="6">
@@ -67,6 +66,8 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-text-field :rules="rules"></v-text-field>
+
   </div>
 </template>
 

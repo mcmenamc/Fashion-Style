@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" color="secondary" clipped app>
+    <v-navigation-drawer  v-model="drawer" color="secondary" clipped app>
       <v-card-actions >
         <v-icon @click="toggle_dark_mode" right large  >mdi-theme-light-dark</v-icon>
         <v-spacer></v-spacer>
@@ -51,12 +51,12 @@
       
       <template v-slot:append>
         <div class="pa-2">
-          <v-btn to="/sign_in" color="info" dark block>
+          <v-btn to="/sign_in" color="info"   block>
             Iniciar Sesión
           </v-btn>
         </div>
         <div class="pa-2">
-          <v-btn to="/sign_up"  color="info" dark  block>
+          <v-btn to="/sign_up"  color="info"   block>
             Registrarse
           </v-btn>
         </div>
@@ -164,23 +164,23 @@ export default {
     },
   },
   mounted() {
-    const theme = localStorage.getItem("dark_theme");
+    // const theme = localStorage.getItem("dark_theme");
 
-    if (theme) {
-      if (theme === "true") {
-        this.$vuetify.theme.dark = true;
-      } else {
-        this.$vuetify.theme.dark = false;
-      }
-    }
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    )
-     {
-      this.$vuetify.theme.dark = true;
-      localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
-    }
+    // if (theme) {
+    //   if (theme === "true") {
+    //     this.$vuetify.theme.dark = true;
+    //   } else {
+    //     this.$vuetify.theme.dark = false;
+    //   }
+    // }
+    // if (
+    //   window.matchMedia &&
+    //   window.matchMedia("(prefers-color-scheme: dark)").matches
+    // )
+    //  {
+    //   this.$vuetify.theme.dark = true;
+    //   localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
+    // }
   },
 };
 </script>
