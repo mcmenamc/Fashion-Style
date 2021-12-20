@@ -32,8 +32,8 @@
         sm="4"
         md="3"
       >
-        <v-card to class="mx-auto" max-width="100%" outlined>
-          <v-list-item three-line>
+        <v-card class="mx-auto" max-width="100%" outlined>
+          <v-list-item  @click="item.show = !item.show" three-line>
             <v-list-item-content>
               <v-list-item-title class="text-h6 mb-1 mt-3">
                 {{ item.title }}
@@ -49,16 +49,12 @@
             </v-list-item-avatar>
           </v-list-item>
           <v-card-actions>
-            <v-btn color="orange lighten-2" text> Explorar </v-btn>
+            <v-btn :to="item.href" color="orange lighten-2" text> Explorar </v-btn>
             <v-spacer></v-spacer>
-            <v-btn icon @click="show = !show">
-              <v-icon>
-                {{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}
-              </v-icon>
-            </v-btn>
+            
           </v-card-actions>
           <v-expand-transition>
-            <div v-show="show">
+            <div v-show="item.show">
               <v-divider></v-divider>
               <v-card-text>
                 Siendo una empresa con productos 100% artesanales, nos importa
@@ -69,8 +65,11 @@
           </v-expand-transition>
         </v-card>
       </v-col>
+
+
+
     </v-row>
-    <v-row>
+    <v-row class="mt-15">
       <v-col cols="12" elevation="12">
         <v-hover>
           <template v-slot:default="{ hover }">
@@ -83,17 +82,45 @@
 
               ></v-img>
               <div class="follow" color="secondary">
-                Siguenos en nuestras redes sociales
+                Síguenos en nuestras redes sociales
                 <div class="redes mt-5">
-                  <v-icon color="#00ACEE" size="30px" class="mx-3">mdi-twitter</v-icon>
+                  <!-- <v-icon color="#00ACEE" size="30px" class="mx-3">mdi-twitter</v-icon>
                   <v-icon color="#3B5998" size="30px" class="mx-3">mdi-facebook</v-icon>
                   <v-icon color="#0088cc" size="30px" class="mx-3 ">mdi-telegram</v-icon>
-                  <v-icon color="#c4302b " size="30px" class="mx-3">mdi-youtube</v-icon>
+                  <v-icon color="#c4302b " size="30px" class="mx-3">mdi-youtube</v-icon> -->
+                  <v-img
+                    max-width="30"
+                    class="mx-3"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                    
+                  ></v-img>
+                   <v-img
+                    max-width="30"
+                    class="mx-3"
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                  ></v-img>
+                   <v-img
+                    max-width="30"
+                    class="mx-3"
+                    src="https://upload.wikimedia.org/wikipedia/sco/9/9f/Twitter_bird_logo_2012.svg"
+                  ></v-img>
+                   <v-img
+                    max-width="30"
+                    class="mx-3"
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
+                  ></v-img>
                 </div>
               </div>
             </v-card>
           </template>
         </v-hover>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col >
+        <v-card height="100vh" >
+
+        </v-card>
       </v-col>
     </v-row>
   </div>
@@ -117,31 +144,30 @@ export default {
         src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
       },
     ],
-    show: false,
     cards: [
       {
-        title: "Descipción",
-        subtitle: "1,000 mil maravillas",
+        title: "Carrito",
+        subtitle: "Pide ahora mismo",
         img: "car.png",
         text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
         show: false,
-        href: "#",
+        href: "/ir1",
       },
       {
-        title: "Descipción",
-        subtitle: "1,000 mil maravillas",
-        img: "car.png",
+        title: "Limpieza",
+        subtitle: "Productos limpios",
+        img: "icono2.png",
         text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
         show: false,
-        href: "#",
+        href: "/ir2",
       },
       {
-        title: "Descipción",
-        subtitle: "1,000 mil maravillas",
-        img: "car.png",
+        title: "Tiempo",
+        subtitle: "En menos tiempo de entrega",
+        img: "tiempo.png",
         text: "Siendo una empresa con productos 100% artesanales, nos importa la economia de nuestros clientes, es por esto que somos reconocidos por mantener los 			mejores precios del mercado.",
         show: false,
-        href: "#",
+        href: "/ir3",
       },
     ],
   }),

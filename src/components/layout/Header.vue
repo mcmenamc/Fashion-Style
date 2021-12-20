@@ -18,6 +18,8 @@
               :prepend-icon="item.icon"
               no-icon
               link
+              
+              
             >
               <template v-slot:activator>
                 <v-list-item-content>
@@ -28,16 +30,19 @@
                 v-for="subItem in item.links"
                 :key="subItem.title"
                 :to="subItem.to"
+                
               >
-                <v-list-item-icon>
-                  <v-icon right size="18" v-text="subItem.icon"></v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title v-text="subItem.title"></v-list-item-title>
+
+              <v-list-item-content>
+                  <v-list-item-title   v-text="subItem.title"></v-list-item-title>
                 </v-list-item-content>
+                <v-list-item-icon>
+                  <v-icon left size="18" v-text="subItem.icon"></v-icon>
+                </v-list-item-icon>
               </v-list-item>
             </v-list-group>
-            <v-list-item v-else :to="item.to" link>
+            
+            <v-list-item  v-else :to="item.to" link>
               <v-list-item-icon>
                 <v-icon v-text="item.icon"></v-icon>
               </v-list-item-icon>
@@ -51,12 +56,12 @@
       
       <template v-slot:append>
         <div class="pa-2">
-          <v-btn to="/sign_in" color="info"   block>
+          <v-btn to="/sign_in" color="primary" dark   block>
             Iniciar Sesión
           </v-btn>
         </div>
         <div class="pa-2">
-          <v-btn to="/sign_up"  color="info"   block>
+          <v-btn to="/sign_up"  color="primary"  dark  block>
             Registrarse
           </v-btn>
         </div>
@@ -84,6 +89,7 @@
             v-bind="attrs"
             v-on="on"
           >
+          
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
