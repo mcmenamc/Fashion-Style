@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <v-row dense>
       <v-col cols="12">
         <v-carousel cycle show-arrows-on-hover>
@@ -33,7 +33,7 @@
         md="3"
       >
         <v-card class="mx-auto" max-width="100%" outlined>
-          <v-list-item  @click="item.show = !item.show" three-line>
+          <v-list-item  >
             <v-list-item-content>
               <v-list-item-title class="text-h6 mb-1 mt-3">
                 {{ item.title }}
@@ -49,9 +49,13 @@
             </v-list-item-avatar>
           </v-list-item>
           <v-card-actions>
-            <v-btn :to="item.href" color="orange lighten-2" text> Explorar </v-btn>
+            <v-btn color="orange lighten-2" text> Explorar </v-btn>
             <v-spacer></v-spacer>
-            
+            <v-btn icon @click="show = !show">
+              <v-icon @click="item.show = !item.show" three-line>
+                {{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}
+              </v-icon>
+            </v-btn>
           </v-card-actions>
           <v-expand-transition>
             <div v-show="item.show">
